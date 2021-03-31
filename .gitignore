@@ -5,4 +5,4 @@ obj/*
 *.log
 config/Development.json
 config/Production.json
-config/default.json
+config/mssql_config.json

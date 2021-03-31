@@ -2,11 +2,11 @@
 let sql = require('mssql');
 
 // config package used to manage configuration options
-const config = require('config');
+const dbConfig = require('../config/mssql_config.json');
 
 // Setup the Database Connection
 // config is used to read values from the connection section of /config/default.json
-let dbConnPoolPromise = new sql.ConnectionPool(config.get('connection'))
+let dbConnPoolPromise = new sql.ConnectionPool(dbConfig.connection)
         .connect()
         .then(pool => {
         console.log('Connected to MSSQL DB')
